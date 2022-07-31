@@ -1,6 +1,6 @@
 const process = require('process')
-const mqtt = require('mqtt')
-const cliente = mqtt.connect({ host: 'localhost', port: 1883, keepalive: 18000 })
+const coap = require('coap')
+const server = coap.createServer()
 let totalMsg = 0
 let firstMsg = null
 let lasttMsg = null
@@ -11,11 +11,11 @@ let alreadyReceivedMsg = false
 const ByteToMB = (x) => (x / (1024 ** 2)).toFixed(2) + ' MB'
 const MicroSecondsToSec = (x) => (x / 1000000).toFixed(2) + ' S'
 
-cliente.on('connect', () => {
-    cliente.subscribe('presence')
-})
+server.on('request', (req, res) => {
+    // JSON.parse(String(req.payload))
+    // console.log(req.payload.toString())
+    // res.end('Hello ' + req.url.split('/')[1] + '\n')
 
-cliente.on('message', function (topic, message) {
     if (!alreadyReceivedMsg) {
         firstMsg = new Date()
         cpu = process.cpuUsage() //Colocar par onde recebe a 1° msg
@@ -26,7 +26,7 @@ cliente.on('message', function (topic, message) {
     lasttMsg = new Date()
     totalMsg++
 
-    if (message.toString() == 'end') {
+    if (req.payload.toString() == 'end') {
         cpu = process.cpuUsage(cpu)
         mem = process.memoryUsage(mem)
         console.log("CPU: ", MicroSecondsToSec(cpu.user))
@@ -40,4 +40,18 @@ cliente.on('message', function (topic, message) {
         console.log("Última Msg: ", lasttMsg)
         cliente.end()
     }
+})
+
+// the default CoAP port is 5683
+server.listen(() => {
+    // const req = coap.request('coap://localhost/Matteo')
+
+    // req.on('response', (res) => {
+    //     res.pipe(process.stdout)
+    //     res.on('end', () => {
+    //         process.exit(0)
+    //     })
+    // })
+
+    //   req.end()
 })
