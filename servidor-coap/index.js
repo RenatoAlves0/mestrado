@@ -12,13 +12,9 @@ const ByteToMB = (x) => (x / (1024 ** 2)).toFixed(2) + ' MB'
 const MicroSecondsToSec = (x) => (x / 1000000).toFixed(2) + ' S'
 
 server.on('request', (req, res) => {
-    // JSON.parse(String(req.payload))
-    // console.log(req.payload.toString())
-    // res.end('Hello ' + req.url.split('/')[1] + '\n')
-
     if (!alreadyReceivedMsg) {
         firstMsg = new Date()
-        cpu = process.cpuUsage() //Colocar par onde recebe a 1° msg
+        cpu = process.cpuUsage()
         mem = process.memoryUsage()
         alreadyReceivedMsg = true
     }
@@ -26,7 +22,8 @@ server.on('request', (req, res) => {
     lasttMsg = new Date()
     totalMsg++
 
-    if (req.payload.toString() == 'end') {
+    // if (req.payload.toString() == 'end') {
+    if (totalMsg == 1000) {
         cpu = process.cpuUsage(cpu)
         mem = process.memoryUsage(mem)
         console.log("CPU: ", MicroSecondsToSec(cpu.user))
@@ -42,7 +39,6 @@ server.on('request', (req, res) => {
     }
 })
 
-// the default CoAP port is 5683
 server.listen(() => {
     // const req = coap.request('coap://localhost/Matteo')
 
