@@ -1,4 +1,5 @@
 const coap = require('coap')
+const qtdMsg = 1000000
 
 enviar_msg = (dados) => {
     let cliente = coap.request(
@@ -13,11 +14,13 @@ enviar_msg = (dados) => {
     cliente.end()
 }
 
-for (let i = 1; i <= 1000; i++) {
+console.log(qtdMsg)
+
+for (let i = 1; i <= qtdMsg; i++) {
     if (i == 1) console.log("1° Msg: ", new Date())
-    if (i == 1000) console.log("Última Msg: ", new Date())
-    if (i != 1000)
+    if (i == qtdMsg) console.log("Última Msg: ", new Date())
+    if (i != qtdMsg)
         enviar_msg('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')
-    if (i == 1000)
+    if (i == qtdMsg)
         enviar_msg('end')
 }

@@ -1,6 +1,7 @@
 const process = require('process')
 const coap = require('coap')
 const server = coap.createServer()
+const qtdMsg = 1000000
 let totalMsg = 0
 let firstMsg = null
 let lasttMsg = null
@@ -23,7 +24,7 @@ server.on('request', (req, res) => {
     totalMsg++
 
     // if (req.payload.toString() == 'end') {
-    if (totalMsg == 1000) {
+    if (totalMsg == qtdMsg) {
         cpu = process.cpuUsage(cpu)
         mem = process.memoryUsage(mem)
         console.log("CPU: ", MicroSecondsToSec(cpu.user))
