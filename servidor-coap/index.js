@@ -1,10 +1,9 @@
-const process = require('process')
-const coap = require('coap')
+import process from 'process'
+import coap from 'coap'
+import { check } from '../services/index.js'
 const server = coap.createServer()
-const qtdMsg = 1000000
 let totalMsg = 0
 let firstMsg = null
-let lasttMsg = null
 let cpu
 let mem
 let alreadyReceivedMsg = false
@@ -20,35 +19,23 @@ server.on('request', (req, res) => {
         alreadyReceivedMsg = true
     }
 
-    lasttMsg = new Date()
     totalMsg++
 
-    // if (req.payload.toString() == 'end') {
-    if (totalMsg == qtdMsg) {
-        cpu = process.cpuUsage(cpu)
-        mem = process.memoryUsage(mem)
-        console.log("CPU: ", MicroSecondsToSec(cpu.user))
-        console.log("MEM RSS: ", ByteToMB(mem.rss))
-        console.log("MEM ArrayBuf: ", ByteToMB(mem.arrayBuffers))
-        console.log("MEM External: ", ByteToMB(mem.external))
-        console.log("MEM HeapTotal: ", ByteToMB(mem.heapTotal))
-        console.log("MEM HeapUsed: ", ByteToMB(mem.heapUsed))
-        console.log("Msgs Recebidas: ", totalMsg)
-        console.log("1° Msg: ", firstMsg)
-        console.log("Última Msg: ", lasttMsg)
-        cliente.end()
-    }
+    // // console.log(totalMsg);
+
+    // // if (req.payload.toString() == 'end') {
+    // //     // if (totalMsg == qtdMsg) {
+    // //     // cpu = process.cpuUsage(cpu)
+    // //     // mem = process.memoryUsage(mem)
+    // console.log("CPU: ", MicroSecondsToSec(process.cpuUsage(cpu).user))
+    // console.log("MEM RSS: ", ByteToMB(process.memoryUsage(mem).rss))
+    // console.log("Msgs Recebidas: ", totalMsg)
+    // console.log("Delay: ", new Date() - firstMsg + ' ms')
+    // //     // cliente.end()
+    // // }
+    check(req.payload, 'agro',
+        MicroSecondsToSec(process.cpuUsage(cpu).user),
+        ByteToMB(process.memoryUsage(mem).rss), totalMsg, firstMsg)
 })
 
-server.listen(() => {
-    // const req = coap.request('coap://localhost/Matteo')
-
-    // req.on('response', (res) => {
-    //     res.pipe(process.stdout)
-    //     res.on('end', () => {
-    //         process.exit(0)
-    //     })
-    // })
-
-    //   req.end()
-})
+server.listen()

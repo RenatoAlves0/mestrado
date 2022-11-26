@@ -1,5 +1,5 @@
 {
-  "name": "servidor-coap",
+  "name": "services",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "coap": "^1.0.11"
-  }
+  "dependencies": {}
 }

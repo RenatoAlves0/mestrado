@@ -2,7 +2,7 @@
     "ler": {
         "temperatura": 25,
         "umidade": 70,
-        "umidade do solo": 60,
+        "umidade_do_solo": 60,
         "chuva": 30,
         "luz": 55
     }
