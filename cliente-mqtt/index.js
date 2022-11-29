@@ -12,7 +12,7 @@ if (configs.type == 'time')
             // await new Promise(function (res) {
             //     // setTimeout(
             //     res(
-            cliente.publish('presence', JSON.stringify(agro))
+            cliente.publish('presence', JSON.stringify(dtdl))
             //         )
             //     // , 100)
             // })
@@ -25,7 +25,7 @@ else
     cliente.on('connect', () => {
         for (let i = 1; i <= configs.qtdMsg; i++) {
             if (i == 1) console.log("1° Msg: ", new Date())
-            if (i != configs.qtdMsg) cliente.publish('presence', JSON.stringify(agro))
+            if (i != configs.qtdMsg) cliente.publish('presence', JSON.stringify(dtdl))
             if (i == configs.qtdMsg) {
                 console.log("Última Msg: ", new Date())
                 cliente.publish('presence', 'end')

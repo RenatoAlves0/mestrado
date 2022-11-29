@@ -33,7 +33,7 @@ cliente.on('message', function (topic, message) {
     // // console.log("Última Msg: ", new Date())
     // console.log("Delay: ", new Date() - firstMsg + ' ms')
 
-    check(message, 'agro',
+    check(message, 'dtdl',
         MicroSecondsToSec(process.cpuUsage(cpu).user),
         ByteToMB(process.memoryUsage(mem).rss), totalMsg, firstMsg)
     if (message.toString() == 'end') {

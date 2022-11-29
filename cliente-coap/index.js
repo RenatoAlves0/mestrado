@@ -24,7 +24,7 @@ if (configs.type == 'time') {
         // await new Promise(function (res) {
         //     // setTimeout(
         //     res(
-        enviar_msg(JSON.stringify(agro))
+        enviar_msg(JSON.stringify(dtdl))
         //         )
         //     // , 100)
         // })
@@ -36,7 +36,7 @@ else {
     console.log('qtdMsg')
     for (let i = 1; i <= configs.qtdMsg; i++) {
         if (i == 1) console.log("1° Msg: ", new Date())
-        if (i != configs.qtdMsg) enviar_msg(JSON.stringify(agro))
+        if (i != configs.qtdMsg) enviar_msg(JSON.stringify(dtdl))
         if (i == configs.qtdMsg) {
             console.log("Última Msg: ", new Date())
             enviar_msg('end')

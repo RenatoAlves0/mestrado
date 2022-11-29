@@ -33,7 +33,8 @@ server.on('request', (req, res) => {
     // console.log("Delay: ", new Date() - firstMsg + ' ms')
     // //     // cliente.end()
     // // }
-    check(req.payload, 'agro',
+
+    check(req.payload, 'dtdl',
         MicroSecondsToSec(process.cpuUsage(cpu).user),
         ByteToMB(process.memoryUsage(mem).rss), totalMsg, firstMsg)
 })

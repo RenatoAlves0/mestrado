@@ -16,11 +16,11 @@ export const check = (props, type, cpu, mem, totalMsg, firstMsg) => {
         console.log(value.l.c != ideal.c && 'Nível de Chuva está fora da faixa ideal')
         console.log(value.l.l != ideal.l && 'Nível de Luz está fora da faixa ideal')
     } else {
-        console.log(value.l.temperatura != ideal.t && 'Temperatura está fora da faixa ideal')
-        console.log(value.l.umidade != ideal.u && 'Umidade está fora da faixa ideal')
-        console.log(value.l.umidade_do_solo != ideal.us && 'Umidade do solo está fora da faixa ideal')
-        console.log(value.l.chuva != ideal.c && 'Nível de Chuva está fora da faixa ideal')
-        console.log(value.l.luz != ideal.l && 'Nível de Luz está fora da faixa ideal')
+        console.log(value.ler.temperatura != ideal.t && 'Temperatura está fora da faixa ideal')
+        console.log(value.ler.umidade != ideal.u && 'Umidade está fora da faixa ideal')
+        console.log(value.ler.umidade_do_solo != ideal.us && 'Umidade do solo está fora da faixa ideal')
+        console.log(value.ler.chuva != ideal.c && 'Nível de Chuva está fora da faixa ideal')
+        console.log(value.ler.luz != ideal.l && 'Nível de Luz está fora da faixa ideal')
     }
 
     console.log("CPU: ", cpu)

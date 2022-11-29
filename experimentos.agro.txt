@@ -1,0 +1,35 @@
+time: 1 seg
+mqtt
+
+CPU:  33.90 S
+MEM RSS:  91.79 MB
+Msgs Recebidas:  333990
+Delay:  80406 ms
+
+CPU:  34.85 S
+MEM RSS:  91.49 MB
+Msgs Recebidas:  335695
+Delay:  82434 ms
+
+CPU:  31.77 S
+MEM RSS:  95.55 MB
+Msgs Recebidas:  305723
+Delay:  73129 ms
+
+time: 1 seg
+coap
+
+CPU:  15.24 S
+MEM RSS:  328.31 MB
+Msgs Recebidas:  51585
+Delay:  43698 ms
+
+CPU:  15.72 S
+MEM RSS:  322.81 MB
+Msgs Recebidas:  50419
+Delay:  43866 ms
+
+CPU:  16.35 S
+MEM RSS:  336.11 MB
+Msgs Recebidas:  53519
+Delay:  43753 ms
