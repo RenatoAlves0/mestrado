@@ -1,4 +1,12 @@
 time: 1 seg
+mqtt-async
+
+CPU:  15.39 S
+MEM RSS:  92.02 MB
+Msgs Recebidas:  148254
+Delay:  37621 ms
+
+time: 1 seg
 mqtt
 
 CPU:  33.90 S
