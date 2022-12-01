@@ -1,0 +1,50 @@
+MQTT-ASYNC
+
+CPU:  5.72 S
+MEM RSS:  89.98 MB
+Msgs Recebidas:  52362
+Delay:  12874 ms
+
+CPU:  5.33 S
+MEM RSS:  89.89 MB
+Msgs Recebidas:  52399
+Delay:  12811 ms
+
+CPU:  5.64 S
+MEM RSS:  93.25 MB
+Msgs Recebidas:  53323
+Delay:  13243 ms
+
+MQTT
+
+CPU:  11.55 S
+MEM RSS:  90.55 MB
+Msgs Recebidas:  108602
+Delay:  26311 ms
+
+CPU:  11.03 S
+MEM RSS:  89.97 MB
+Msgs Recebidas:  103975
+Delay:  26079 ms
+
+CPU:  11.47 S
+MEM RSS:  90.14 MB
+Msgs Recebidas:  107509
+Delay:  27037 ms
+
+COAP
+
+CPU:  4.84 S
+MEM RSS:  172.06 MB
+Msgs Recebidas:  19533
+Delay:  20333 ms
+
+CPU:  5.28 S
+MEM RSS:  179.49 MB
+Msgs Recebidas:  20460
+Delay:  20114 ms
+
+CPU:  5.36 S
+MEM RSS:  179.09 MB
+Msgs Recebidas:  20277
+Delay:  20196 ms
