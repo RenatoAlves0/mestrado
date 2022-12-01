@@ -1,5 +1,4 @@
 {
-    "type": "time",
-    "time": 1000,
-    "qtdMsg": 1000
+    "type": "agro",
+    "time": 1000
 }

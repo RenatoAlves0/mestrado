@@ -4,32 +4,15 @@ import configs from '../configs.json' assert { type: "json" }
 import agro from '../design-language/agro-ld/response-payload.json' assert { type: "json" }
 import dtdl from '../design-language/dtdl/response-payload.json' assert { type: "json" }
 
-if (configs.type == 'time')
-    cliente.on('connect', async () => {
-        const initTime = Date.now()
-        console.log("1° Msg: ", new Date())
-        while (Date.now() - initTime < configs.time) {
-            // await new Promise(function (res) {
-            //     // setTimeout(
-            //     res(
-            await cliente.publish('presence', JSON.stringify(agro))
-            //         )
-            //     // , 100)
-            // })
-        }
-        console.log("Última Msg: ", new Date())
-        await cliente.publish('presence', 'end')
-        await cliente.end()
-    })
-else
-    cliente.on('connect', () => {
-        for (let i = 1; i <= configs.qtdMsg; i++) {
-            if (i == 1) console.log("1° Msg: ", new Date())
-            if (i != configs.qtdMsg) cliente.publish('presence', JSON.stringify(dtdl))
-            if (i == configs.qtdMsg) {
-                console.log("Última Msg: ", new Date())
-                cliente.publish('presence', 'end')
-                cliente.end()
-            }
-        }
-    })
+const ld = { agro, dtdl }
+
+cliente.on('connect', async () => {
+    const initTime = Date.now()
+    console.log("1° Msg: ", new Date())
+    while (Date.now() - initTime < configs.time) {
+        await cliente.publish('presence', JSON.stringify(ld[configs.type]))
+    }
+    console.log("Última Msg: ", new Date())
+    await cliente.publish('presence', 'end')
+    await cliente.end()
+})

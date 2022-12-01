@@ -1,6 +1,8 @@
 import process from 'process'
 import coap from 'coap'
 import { check } from '../services/index.js'
+import configs from '../configs.json' assert { type: "json" }
+
 const server = coap.createServer()
 let totalMsg = 0
 let firstMsg = null
@@ -21,20 +23,7 @@ server.on('request', (req, res) => {
 
     totalMsg++
 
-    // // console.log(totalMsg);
-
-    // // if (req.payload.toString() == 'end') {
-    // //     // if (totalMsg == qtdMsg) {
-    // //     // cpu = process.cpuUsage(cpu)
-    // //     // mem = process.memoryUsage(mem)
-    // console.log("CPU: ", MicroSecondsToSec(process.cpuUsage(cpu).user))
-    // console.log("MEM RSS: ", ByteToMB(process.memoryUsage(mem).rss))
-    // console.log("Msgs Recebidas: ", totalMsg)
-    // console.log("Delay: ", new Date() - firstMsg + ' ms')
-    // //     // cliente.end()
-    // // }
-
-    check(req.payload, 'dtdl',
+    check(req.payload, configs.type,
         MicroSecondsToSec(process.cpuUsage(cpu).user),
         ByteToMB(process.memoryUsage(mem).rss), totalMsg, firstMsg)
 })
