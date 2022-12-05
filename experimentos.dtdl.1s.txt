@@ -17,6 +17,7 @@ Delay:  10828 ms
 
 MQTT
 
+CPU:  20.92 S
 MEM RSS:  90.27 MB
 Msgs Recebidas:  214771
 Delay:  54999 ms
