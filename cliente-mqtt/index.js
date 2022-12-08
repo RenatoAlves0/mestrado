@@ -1,5 +1,5 @@
 import mqtt from 'mqtt'
-const cliente = mqtt.connect({ host: 'localhost', port: 1883, keepalive: 18000 })
+const cliente = mqtt.connect({ host: '192.168.0.4', port: 1883, keepalive: 18000 })
 import configs from '../configs.json' assert { type: "json" }
 import agro from '../design-language/agro-ld/response-payload.json' assert { type: "json" }
 import dtdl from '../design-language/dtdl/response-payload.json' assert { type: "json" }
@@ -7,10 +7,10 @@ import dtdl from '../design-language/dtdl/response-payload.json' assert { type: 
 const ld = { agro, dtdl }
 
 cliente.on('connect', () => {
-    const initTime = Date.now()
+    const firstMsg = Date.now()
     console.log("1° Msg: ", new Date())
-    while (Date.now() - initTime < configs.time) {
-        cliente.publish('presence', JSON.stringify(ld[configs.type]))
+    while (Date.now() - firstMsg < configs.time) {
+        cliente.publish('presence', JSON.stringify({ telemetry: ld[configs.type], firstMsg: firstMsg }))
     }
     console.log("Última Msg: ", new Date())
     cliente.publish('presence', 'end')

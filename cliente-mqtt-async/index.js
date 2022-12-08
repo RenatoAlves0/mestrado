@@ -7,10 +7,10 @@ import dtdl from '../design-language/dtdl/response-payload.json' assert { type: 
 const ld = { agro, dtdl }
 
 cliente.on('connect', async () => {
-    const initTime = Date.now()
+    const firstMsg = Date.now()
     console.log("1° Msg: ", new Date())
-    while (Date.now() - initTime < configs.time) {
-        await cliente.publish('presence', JSON.stringify(ld[configs.type]))
+    while (Date.now() - firstMsg < configs.time) {
+        await cliente.publish('presence', JSON.stringify({ telemetry: ld[configs.type], firstMsg: firstMsg }))
     }
     console.log("Última Msg: ", new Date())
     await cliente.publish('presence', 'end')

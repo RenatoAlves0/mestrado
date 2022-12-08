@@ -17,10 +17,10 @@ const enviar_msg = (dados) => {
     cliente.end()
 }
 
-const initTime = Date.now()
+const firstMsg = Date.now()
 console.log("1° Msg: ", new Date())
-while (Date.now() - initTime < configs.time) {
-    enviar_msg(JSON.stringify(ld[configs.type]))
+while (Date.now() - firstMsg < configs.time) {
+    enviar_msg(JSON.stringify({ telemetry: ld[configs.type], firstMsg: firstMsg }))
 }
 console.log("Última Msg: ", new Date())
 enviar_msg('end')
