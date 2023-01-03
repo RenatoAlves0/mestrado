@@ -10,11 +10,38 @@
     },
     {
         "ler": {
-            "temperatura": 25,
-            "umidade": 70,
-            "umidade_do_solo": 60,
-            "chuva": 30,
-            "luz": 55
+            "temperatura": 24,
+            "umidade": 60,
+            "umidade_do_solo": 80,
+            "chuva": 37,
+            "luz": 52
+        }
+    },
+    {
+        "ler": {
+            "temperatura": 35,
+            "umidade": 74,
+            "umidade_do_solo": 75,
+            "chuva": 70,
+            "luz": 40
+        }
+    },
+    {
+        "ler": {
+            "temperatura": 12,
+            "umidade": 87,
+            "umidade_do_solo": 98,
+            "chuva": 47,
+            "luz": 70
+        }
+    },
+    {
+        "ler": {
+            "temperatura": 22,
+            "umidade": 10,
+            "umidade_do_solo": 14,
+            "chuva": 10,
+            "luz": 57
         }
     },
     {
@@ -28,38 +55,38 @@
     },
     {
         "ler": {
-            "temperatura": 25,
-            "umidade": 70,
-            "umidade_do_solo": 60,
-            "chuva": 30,
-            "luz": 55
+            "temperatura": 24,
+            "umidade": 60,
+            "umidade_do_solo": 80,
+            "chuva": 37,
+            "luz": 52
         }
     },
     {
         "ler": {
-            "temperatura": 25,
-            "umidade": 70,
-            "umidade_do_solo": 60,
-            "chuva": 30,
-            "luz": 55
+            "temperatura": 35,
+            "umidade": 74,
+            "umidade_do_solo": 75,
+            "chuva": 70,
+            "luz": 40
         }
     },
     {
         "ler": {
-            "temperatura": 25,
-            "umidade": 70,
-            "umidade_do_solo": 60,
-            "chuva": 30,
-            "luz": 55
+            "temperatura": 12,
+            "umidade": 87,
+            "umidade_do_solo": 98,
+            "chuva": 47,
+            "luz": 70
         }
     },
     {
         "ler": {
-            "temperatura": 25,
-            "umidade": 70,
-            "umidade_do_solo": 60,
-            "chuva": 30,
-            "luz": 55
+            "temperatura": 22,
+            "umidade": 10,
+            "umidade_do_solo": 14,
+            "chuva": 10,
+            "luz": 57
         }
     }
 ]

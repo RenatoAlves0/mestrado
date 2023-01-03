@@ -1,5 +1,5 @@
 import mqtt from 'mqtt'
-const cliente = mqtt.connect({ host: '192.168.0.4', port: 1883, keepalive: 18000 })
+const cliente = mqtt.connect({ host: 'localhost', port: 1883, keepalive: 18000 })
 import configs from '../configs.json' assert { type: "json" }
 import agro from '../design-language/agro-ld/response-payload.json' assert { type: "json" }
 import dtdl from '../design-language/dtdl/response-payload.json' assert { type: "json" }
