@@ -17,10 +17,13 @@ const enviar_msg = (dados) => {
     cliente.end()
 }
 
+let total = 0
 const firstMsg = Date.now()
 console.log("1° Msg: ", new Date())
 while (Date.now() - firstMsg < configs.time) {
     enviar_msg(JSON.stringify({ telemetry: ld[configs.type], firstMsg: firstMsg }))
+    total++
 }
 console.log("Última Msg: ", new Date())
+console.log(total)
 enviar_msg('end')

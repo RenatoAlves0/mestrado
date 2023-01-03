@@ -10,8 +10,8 @@ let cpu
 let mem
 let alreadyReceivedMsg = false
 
-const ByteToMB = (x) => (x / (1024 ** 2)).toFixed(2) + ' MB'
-const MicroSecondsToSec = (x) => (x / 1000000).toFixed(2) + ' S'
+const ByteToMB = (x) => (x / (1024 ** 2)).toFixed(2)
+const MicroSecondsToMiliSec = (x) => (x / 1000).toFixed(2)
 
 server.on('request', (req, res) => {
     if (!alreadyReceivedMsg) {
@@ -24,7 +24,7 @@ server.on('request', (req, res) => {
     totalMsg++
 
     check(req.payload, configs.type,
-        MicroSecondsToSec(process.cpuUsage(cpu).user),
+        MicroSecondsToMiliSec(process.cpuUsage(cpu).user),
         ByteToMB(process.memoryUsage(mem).rss), totalMsg, firstMsg)
 })
 
