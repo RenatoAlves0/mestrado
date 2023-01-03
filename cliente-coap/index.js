@@ -26,4 +26,3 @@ while (Date.now() - firstMsg < configs.time) {
 }
 console.log("Última Msg: ", new Date())
 console.log(total)
-enviar_msg('end')

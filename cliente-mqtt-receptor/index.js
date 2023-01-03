@@ -29,7 +29,4 @@ cliente.on('message', function (topic, message) {
     check(message, configs.type,
         MicroSecondsToMiliSec(process.cpuUsage(cpu).user),
         ByteToMB(process.memoryUsage(mem).rss), totalMsg, firstMsg)
-    if (message.toString() == 'end') {
-        cliente.end()
-    }
 })

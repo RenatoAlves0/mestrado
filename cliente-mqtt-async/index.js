@@ -16,6 +16,5 @@ cliente.on('connect', async () => {
     }
     console.log("Última Msg: ", new Date())
     console.log(total)
-    await cliente.publish('presence', 'end')
     await cliente.end()
 })

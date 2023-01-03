@@ -1,3 +1,5 @@
+import fs from 'fs'
+
 const ideal = {
     t: 20,
     u: 75,
@@ -30,4 +32,10 @@ export const check = (props, type, cpu, mem, totalMsg, firstMsg) => {
     }
 
     console.log(String(cpu).replace('.',','), String(mem).replace('.',','), new Date() - value.firstMsg, totalMsg)
+    const csv = `cpu,mem,delay,msg\n${cpu},${mem},${new Date() - value.firstMsg},${totalMsg}\n`
+    try {
+      fs.writeFileSync(`./file.csv`, csv)
+    } catch (err) {
+      console.error(err)
+    }
 }

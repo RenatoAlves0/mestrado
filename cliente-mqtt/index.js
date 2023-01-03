@@ -16,6 +16,5 @@ cliente.on('connect', () => {
     }
     console.log("Última Msg: ", new Date())
     console.log(total)
-    cliente.publish('presence', 'end')
     cliente.end()
 })
