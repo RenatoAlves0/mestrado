@@ -1,4 +1,6 @@
 {
-    "type": "agro",
-    "time": 10
+    "type": "dtdl",
+    "time": 60000,
+    "time_between_msg": 1,
+    "total_msg": 0
 }

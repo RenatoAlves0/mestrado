@@ -4,16 +4,25 @@ import configs from '../configs.json' assert { type: "json" }
 import agro from '../design-language/agro-ld/response-payload.json' assert { type: "json" }
 import dtdl from '../design-language/dtdl/response-payload.json' assert { type: "json" }
 
+const delay = (ms) => new Promise((res) => setTimeout(res, ms))
+
 const ld = { agro, dtdl }
 
-cliente.on('connect', () => {
+cliente.on('connect', async () => {
     let total = 0
     const firstMsg = Date.now()
     console.log("1° Msg: ", new Date())
-    while (Date.now() - firstMsg < configs.time) {
-        cliente.publish('presence', JSON.stringify({ telemetry: ld[configs.type], firstMsg: firstMsg }))
-        total++
-    }
+    if(configs.total_msg > 0)
+        while (total < configs.total_msg) {
+            cliente.publish('presence', JSON.stringify({ telemetry: ld[configs.type], firstMsg: firstMsg }))
+            total++
+        } 
+    else
+        while (Date.now() - firstMsg < configs.time) {
+            await delay(configs.time_between_msg)
+            cliente.publish('presence', JSON.stringify({ telemetry: ld[configs.type], firstMsg: firstMsg }))
+            total++
+        }
     console.log("Última Msg: ", new Date())
     console.log(total)
     cliente.end()
