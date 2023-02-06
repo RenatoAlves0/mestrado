@@ -1,6 +1,6 @@
 {
     "type": "dtdl",
     "time": 60000,
-    "time_between_msg": 1,
+    "time_between_msg": 0,
     "total_msg": 0
 }

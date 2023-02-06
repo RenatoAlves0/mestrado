@@ -10,7 +10,7 @@ const ld = { agro, dtdl }
 const enviar_msg = (dados) => {
     let cliente = coap.request(
         {
-            host: 'localhost',
+            host: '192.168.0.8',
             port: 5683,
             pathname: "/presence",
             method: 'post',
@@ -22,7 +22,7 @@ const enviar_msg = (dados) => {
 let total = 0
 const firstMsg = Date.now()
 console.log("1° Msg: ", new Date())
-if(configs.total_msg > 0)
+if (configs.total_msg > 0)
     while (total < configs.total_msg) {
         enviar_msg(JSON.stringify({ telemetry: ld[configs.type], firstMsg: firstMsg }))
         total++
