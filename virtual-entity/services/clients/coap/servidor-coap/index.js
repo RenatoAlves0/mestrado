@@ -1,7 +1,7 @@
 import process from 'process'
 import coap from 'coap'
-import { check } from '../services/index.js'
-import configs from '../configs.json' assert { type: "json" }
+import { check } from '../../../../services/api/index.js'
+import configs from '../../../../../configs.json' assert { type: "json" }
 
 const server = coap.createServer()
 let totalMsg = 0

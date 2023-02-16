@@ -1,7 +1,7 @@
 import process from 'process'
 import mqtt from 'mqtt'
-import { check } from '../services/index.js'
-import configs from '../configs.json' assert { type: "json" }
+import { check } from '../../../../services/api/index.js'
+import configs from '../../../../../configs.json' assert { type: "json" }
 const cliente = mqtt.connect({ host: '192.168.0.8', port: 1883, keepalive: 18000 })
 let totalMsg = 0
 let firstMsg = null

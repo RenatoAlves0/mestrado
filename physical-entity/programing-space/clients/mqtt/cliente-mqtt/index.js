@@ -1,8 +1,8 @@
 import mqtt from 'mqtt'
 const cliente = mqtt.connect({ host: '192.168.0.8', port: 1883, keepalive: 18000 })
-import configs from '../configs.json' assert { type: "json" }
-import agro from '../design-language/agro-ld/response-payload.json' assert { type: "json" }
-import dtdl from '../design-language/dtdl/response-payload.json' assert { type: "json" }
+import configs from '../../../../../configs.json' assert { type: "json" }
+import agro from '../../../../../virtual-entity/design-language/agro-ld/response-payload.json' assert { type: "json" }
+import dtdl from '../../../../../virtual-entity/design-language/dtdl/response-payload.json' assert { type: "json" }
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms))
 

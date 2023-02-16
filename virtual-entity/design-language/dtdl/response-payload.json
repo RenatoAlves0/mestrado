@@ -10,15 +10,6 @@
     },
     {
         "ler": {
-            "temperatura": 25,
-            "umidade": 70,
-            "umidade_do_solo": 60,
-            "chuva": 30,
-            "luz": 55
-        }
-    },
-    {
-        "ler": {
             "temperatura": 24,
             "umidade": 60,
             "umidade_do_solo": 80,

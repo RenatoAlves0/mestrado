@@ -1,7 +1,7 @@
 import coap from 'coap'
-import configs from '../configs.json' assert { type: "json" }
-import agro from '../design-language/agro-ld/response-payload.json' assert { type: "json" }
-import dtdl from '../design-language/dtdl/response-payload.json' assert { type: "json" }
+import configs from '../../../../../configs.json' assert { type: "json" }
+import agro from '../../../../../virtual-entity/design-language/agro-ld/response-payload.json' assert { type: "json" }
+import dtdl from '../../../../../virtual-entity/design-language/dtdl/response-payload.json' assert { type: "json" }
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms))
 
