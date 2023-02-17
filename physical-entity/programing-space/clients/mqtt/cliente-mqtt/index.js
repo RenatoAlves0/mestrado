@@ -8,22 +8,28 @@ const delay = (ms) => new Promise((res) => setTimeout(res, ms))
 
 const ld = { agro, dtdl }
 
-cliente.on('connect', async () => {
-    let total = 0
-    const firstMsg = Date.now()
-    console.log("1° Msg: ", new Date())
-    if (configs.total_msg > 0)
-        while (total < configs.total_msg) {
-            cliente.publish('presence', JSON.stringify({ telemetry: ld[configs.type], firstMsg: firstMsg }))
-            total++
-        }
-    else
-        while (Date.now() - firstMsg < configs.time) {
-            await delay(configs.time_between_msg)
-            cliente.publish('presence', JSON.stringify({ telemetry: ld[configs.type], firstMsg: firstMsg }))
-            total++
-        }
-    console.log("Última Msg: ", new Date())
-    console.log(total)
-    cliente.end()
-})
+const ef = async () => {
+    cliente.on('connect', async () => {
+        let total = 0
+        const firstMsg = Date.now()
+        console.log("1° Msg: ", new Date())
+        if (configs.total_msg > 0)
+            while (total < configs.total_msg) {
+                cliente.publish('presence', JSON.stringify({ telemetry: ld[configs.type], firstMsg: firstMsg }))
+                total++
+            }
+        else
+            while (Date.now() - firstMsg < configs.time) {
+                await delay(configs.time_between_msg)
+                cliente.publish('presence', JSON.stringify({ telemetry: ld[configs.type], firstMsg: firstMsg }))
+                total++
+            }
+        console.log("Última Msg: ", new Date())
+        console.log(total)
+        cliente.end()
+    })
+}
+
+for (let i = 0; i < configs.efs; i++) {
+    ef()    
+}
