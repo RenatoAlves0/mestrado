@@ -1,0 +1,221 @@
+{
+  "entity": {
+    "id": "planteBox",
+    "sensors": [
+      {
+        "id": "dht11",
+        "data": ["temperatura", "umidade"]
+      },
+      {
+        "id": "yl69",
+        "data": ["umidade do solo"]
+      },
+      {
+        "id": "yl83",
+        "data": ["chuva"]
+      },
+      { "id": "ldr", "data": ["luz"] }
+    ],
+    "actuators": [
+      {
+        "id": "irrigador",
+        "actions": ["irrigar"]
+      }
+    ],
+    "cpu": {
+      "model": "ESP 32S",
+      "cores": "1",
+      "lithography": { "value": "5", "unity": "mm" },
+      "clock": { "value": "240", "unity": "MHz" },
+      "temperature": {
+        "min": "-40",
+        "max": "150",
+        "unity": "degreeCelsius"
+      }
+    },
+    "memory": [
+      {
+        "id": "Flash",
+        "model": "",
+        "type": "SSD",
+        "capacity": { "value": "4", "unity": "MB" },
+        "speed": { "value": "", "unity": "" }
+      },
+      {
+        "id": "SRAM",
+        "model": "",
+        "type": "SSD",
+        "capacity": { "value": "520", "unity": "KB" },
+        "speed": { "value": "", "unity": "" }
+      },
+      {
+        "id": "ROM",
+        "model": "",
+        "type": "SSD",
+        "capacity": { "value": "448", "unity": "KB" },
+        "speed": { "value": "", "unity": "" }
+      }
+    ],
+    "battery": {
+      "model": "",
+      "type": "",
+      "capacity": { "value": "", "unity": "" },
+      "temperature": { "min": "", "max": "", "unity": "" }
+    },
+    "communication": [
+      {
+        "id": "wifi",
+        "protocol": "IEEE 802.11 b/g/n",
+        "range": { "value": "100/180", "unity": "m" },
+        "speed": { "value": "150", "unity": "Mbps" }
+      },
+      {
+        "id": "bluetooth",
+        "protocol": "BLE v4.2",
+        "range": { "value": "60", "unity": "m" },
+        "speed": { "value": "1", "unity": "Mbps" }
+      }
+    ],
+    "functions": [
+      {
+        "id": "ler",
+        "alias": "l",
+        "description": "ler dados dos sensores",
+        "parameters": [
+          {
+            "id": "",
+            "type": "",
+            "description": "",
+            "enum": [],
+            "aliasEnum": [],
+            "required": ""
+          }
+        ],
+        "response": [
+          {
+            "id": "temperatura",
+            "alias": "t",
+            "type": "float",
+            "unity": "degreeCelsius"
+          },
+          {
+            "id": "umidade",
+            "alias": "u",
+            "type": "float",
+            "unity": "percent"
+          },
+          {
+            "id": "umidade do solo",
+            "alias": "us",
+            "type": "float",
+            "unity": "percent"
+          },
+          {
+            "id": "chuva",
+            "alias": "c",
+            "type": "float",
+            "unity": "percent"
+          },
+          {
+            "id": "luz",
+            "alias": "l",
+            "type": "float",
+            "unity": "percent"
+          }
+        ]
+      },
+      {
+        "id": "ligarDesligar",
+        "alias": "ld",
+        "description": "ligar ou desligar atuador ou sensores",
+        "parameters": [
+          {
+            "id": "",
+            "type": "",
+            "description": "",
+            "enum": [
+              "ligarAtuador",
+              "ligarSensores",
+              "desligarAtuador",
+              "desligarSensores"
+            ],
+            "aliasEnum": ["la", "ls", "da", "ds"],
+            "required": "1"
+          }
+        ],
+        "response": [
+          {
+            "id": "executado com sucesso",
+            "alias": "es",
+            "type": "boolean",
+            "unity": ""
+          }
+        ]
+      },
+      {
+        "id": "temperaturaOperacao",
+        "alias": "to",
+        "description": "ler temperatura de operacao da cpu e bateria",
+        "parameters": [
+          {
+            "id": "",
+            "type": "",
+            "description": "",
+            "enum": [],
+            "aliasEnum": [],
+            "required": ""
+          }
+        ],
+        "response": [
+          {
+            "id": "temperatura da cpu",
+            "alias": "tc",
+            "type": "float",
+            "unity": "degreeCelsius"
+          },
+          {
+            "id": "temperatura da bateria",
+            "alias": "tb",
+            "type": "float",
+            "unity": "degreeCelsius"
+          }
+        ]
+      },
+      {
+        "id": "medirConsumo",
+        "alias": "mc",
+        "description": "ler consumo da cpu, bateria e memoria flash",
+        "parameters": [
+          {
+            "id": "",
+            "type": "",
+            "description": "",
+            "enum": [],
+            "aliasEnum": [],
+            "required": ""
+          }
+        ],
+        "response": [
+          {
+            "id": "consumo da cpu",
+            "alias": "cc",
+            "type": "float",
+            "unity": "percent"
+          },
+          {
+            "id": "consumo da bateria",
+            "alias": "cb",
+            "type": "float",
+            "unity": "percent"
+          },
+          {
+            "id": "consumo da memoria flash",
+            "alias": "cmf",
+            "type": "float",
+            "unity": "percent"
+          }
+        ]
+      }
+    ]
+  }
+}

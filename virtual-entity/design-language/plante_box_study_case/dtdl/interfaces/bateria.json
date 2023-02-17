@@ -1,0 +1,107 @@
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:com:example:bateria;1",
+  "@type": "Interface",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "model",
+      "schema": "string",
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": "",
+      "unit": "",
+      "writable": ""
+    },
+    {
+      "@type": "Property",
+      "name": "type",
+      "schema": "string",
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": "",
+      "unit": "",
+      "writable": ""
+    },
+    {
+      "@type": "Property",
+      "name": "capacity",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "value",
+            "schema": "string",
+            "@id": "",
+            "comment": "",
+            "description": "",
+            "displayName": ""
+          },
+          {
+            "name": "unity",
+            "schema": "string",
+            "@id": "",
+            "comment": "",
+            "description": "",
+            "displayName": ""
+          }
+        ],
+        "@id": "",
+        "comment": "",
+        "description": "",
+        "displayName": ""
+      },
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": "",
+      "unit": "",
+      "writable": ""
+    },
+    {
+      "@type": "Property",
+      "name": "temperature",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "min",
+            "schema": "string",
+            "@id": "",
+            "comment": "",
+            "description": "",
+            "displayName": ""
+          },
+          {
+            "name": "max",
+            "schema": "string",
+            "@id": "",
+            "comment": "",
+            "description": "",
+            "displayName": ""
+          },
+          {
+            "name": "unity",
+            "schema": "string",
+            "@id": "",
+            "comment": "",
+            "description": "",
+            "displayName": ""
+          }
+        ],
+        "@id": "",
+        "comment": "",
+        "description": "",
+        "displayName": ""
+      },
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": "",
+      "unit": "",
+      "writable": ""
+    }
+  ]
+}

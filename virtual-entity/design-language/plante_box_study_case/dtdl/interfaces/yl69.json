@@ -1,0 +1,17 @@
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:com:example:yl69;1",
+  "@type": "Interface",
+  "contents": [
+    {
+      "@type": ["Telemetry"],
+      "name": "umidade do solo",
+      "schema": "string",
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": "",
+      "unit": "percent"
+    }
+  ]
+}

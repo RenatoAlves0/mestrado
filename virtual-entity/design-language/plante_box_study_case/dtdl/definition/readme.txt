@@ -1,0 +1,1 @@
+A definição da DTDL pode ser encontrada em https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md 

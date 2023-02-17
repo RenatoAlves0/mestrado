@@ -1,0 +1,356 @@
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:com:example:planteBox;1",
+  "@type": "Interface",
+  "contents": [
+    {
+      "@type": "Component",
+      "name": "dht11",
+      "schema": "dtmi:com:example:dht11;1",
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": ""
+    },
+    {
+      "@type": "Component",
+      "name": "yl69",
+      "schema": "dtmi:com:example:yl69;1",
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": ""
+    },
+    {
+      "@type": "Component",
+      "name": "yl83",
+      "schema": "dtmi:com:example:yl83;1",
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": ""
+    },
+    {
+      "@type": "Component",
+      "name": "ldr",
+      "schema": "dtmi:com:example:ldr;1",
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": ""
+    },
+    {
+      "@type": "Component",
+      "name": "irrigador",
+      "schema": "dtmi:com:example:irrigador;1",
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": ""
+    },
+    {
+      "@type": "Component",
+      "name": "cpu",
+      "schema": "dtmi:com:example:cpu;1",
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": ""
+    },
+    {
+      "@type": "Component",
+      "name": "Flash",
+      "schema": "dtmi:com:example:memoria;1",
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": ""
+    },
+    {
+      "@type": "Component",
+      "name": "SRAM",
+      "schema": "dtmi:com:example:memoria;1",
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": ""
+    },
+    {
+      "@type": "Component",
+      "name": "ROM",
+      "schema": "dtmi:com:example:memoria;1",
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": ""
+    },
+    {
+      "@type": "Component",
+      "name": "bateria",
+      "schema": "dtmi:com:example:bateria;1",
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": ""
+    },
+    {
+      "@type": "Component",
+      "name": "wifi",
+      "schema": "dtmi:com:example:comunicacao;1",
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": ""
+    },
+    {
+      "@type": "Component",
+      "name": "bluetooth",
+      "schema": "dtmi:com:example:comunicacao;1",
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": ""
+    },
+    {
+      "@type": "Command",
+      "name": "ler",
+      "@id": "",
+      "comment": "",
+      "description": "ler dados dos sensores",
+      "displayName": "",
+      "request": {
+        "name": "",
+        "schema": "",
+        "@id": "",
+        "comment": "",
+        "description": "",
+        "displayName": ""
+      },
+      "response": {
+        "name": "dados dos sensores",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "name": "temperatura",
+              "schema": "float",
+              "@id": "",
+              "comment": "unidade: degreeCelsius",
+              "description": "",
+              "displayName": ""
+            },
+            {
+              "name": "umidade",
+              "schema": "float",
+              "@id": "",
+              "comment": "unidade: percent",
+              "description": "",
+              "displayName": ""
+            },
+            {
+              "name": "umidade do solo",
+              "schema": "float",
+              "@id": "",
+              "comment": "unidade: percent",
+              "description": "",
+              "displayName": ""
+            },
+            {
+              "name": "chuva",
+              "schema": "float",
+              "@id": "",
+              "comment": "unidade: percent",
+              "description": "",
+              "displayName": ""
+            },
+            {
+              "name": "luz",
+              "schema": "float",
+              "@id": "",
+              "comment": "unidade: percent",
+              "description": "",
+              "displayName": ""
+            }
+          ],
+          "@id": "",
+          "comment": "",
+          "description": "",
+          "displayName": ""
+        },
+        "@id": "",
+        "comment": "",
+        "description": "",
+        "displayName": ""
+      }
+    },
+    {
+      "@type": "Command",
+      "name": "ligarDesligar",
+      "@id": "",
+      "comment": "",
+      "description": "liga ou desliga atuador ou sensores",
+      "displayName": "",
+      "request": {
+        "name": "",
+        "schema": {
+          "@type": "Enum",
+          "valueSchema": "string",
+          "enumValues": [
+            {
+              "name": "ligarAtuador",
+              "enumValue": "la",
+              "@id": "",
+              "comment": "",
+              "description": "",
+              "displayName": ""
+            },
+            {
+              "name": "ligarSensores",
+              "enumValue": "ls",
+              "@id": "",
+              "comment": "",
+              "description": "",
+              "displayName": ""
+            },
+            {
+              "name": "desligarAtuador",
+              "enumValue": "da",
+              "@id": "",
+              "comment": "",
+              "description": "",
+              "displayName": ""
+            },
+            {
+              "name": "desligarSensores",
+              "enumValue": "ds",
+              "@id": "",
+              "comment": "",
+              "description": "",
+              "displayName": ""
+            }
+          ],
+          "@id": "",
+          "comment": "",
+          "description": "",
+          "displayName": ""
+        },
+        "@id": "",
+        "comment": "",
+        "description": "",
+        "displayName": ""
+      },
+      "response": {
+        "name": "executado com sucesso",
+        "schema": "boolean",
+        "@id": "",
+        "comment": "",
+        "description": "",
+        "displayName": ""
+      }
+    },
+    {
+      "@type": "Command",
+      "name": "temperaturaOperacao",
+      "@id": "",
+      "comment": "",
+      "description": "ler temperatuda de operacao da CPU e bateria",
+      "displayName": "",
+      "request": {
+        "name": "",
+        "schema": "",
+        "@id": "",
+        "comment": "",
+        "description": "",
+        "displayName": ""
+      },
+      "response": {
+        "name": "dados dos sensores",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "name": "temperatura da cpu",
+              "schema": "float",
+              "@id": "",
+              "comment": "unidade: degreeCelsius",
+              "description": "",
+              "displayName": ""
+            },
+            {
+              "name": "temperatura da bateria",
+              "schema": "float",
+              "@id": "",
+              "comment": "unidade: degreeCelsius",
+              "description": "",
+              "displayName": ""
+            }
+          ],
+          "@id": "",
+          "comment": "",
+          "description": "",
+          "displayName": ""
+        },
+        "@id": "",
+        "comment": "",
+        "description": "",
+        "displayName": ""
+      }
+    },
+    {
+      "@type": "Command",
+      "name": "medirConsumo",
+      "@id": "",
+      "comment": "",
+      "description": "ler consumo da CPU, bateria e memoria flash",
+      "displayName": "",
+      "request": {
+        "name": "",
+        "schema": "",
+        "@id": "",
+        "comment": "",
+        "description": "",
+        "displayName": ""
+      },
+      "response": {
+        "name": "dados dos sensores",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "name": "consumo da cpu",
+              "schema": "float",
+              "@id": "",
+              "comment": "unidade: percent",
+              "description": "",
+              "displayName": ""
+            },
+            {
+              "name": "consumo da bateria",
+              "schema": "float",
+              "@id": "",
+              "comment": "unidade: percent",
+              "description": "",
+              "displayName": ""
+            },
+            {
+              "name": "consumo da memoria flash",
+              "schema": "float",
+              "@id": "",
+              "comment": "unidade: percent",
+              "description": "",
+              "displayName": ""
+            }
+          ],
+          "@id": "",
+          "comment": "",
+          "description": "",
+          "displayName": ""
+        },
+        "@id": "",
+        "comment": "",
+        "description": "",
+        "displayName": ""
+      }
+    }
+  ]
+}

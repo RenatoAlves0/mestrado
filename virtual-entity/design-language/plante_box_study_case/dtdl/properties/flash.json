@@ -1,0 +1,8 @@
+{
+  "Flash": {
+    "model": "",
+    "type": "SSD",
+    "capacity": { "value": "4", "unity": "MB" },
+    "velocity": { "value": "", "unity": "" }
+  }
+}

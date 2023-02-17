@@ -1,0 +1,18 @@
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:com:example:irrigador;1",
+  "@type": "Interface",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "Irrigar",
+      "schema": "boolean",
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": "",
+      "unit": "",
+      "writable": ""
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "sram": {
+    "model": "",
+    "type": "SSD",
+    "capacity": { "value": "520", "unity": "KB" },
+    "velocity": { "value": "", "unity": "" }
+  }
+}

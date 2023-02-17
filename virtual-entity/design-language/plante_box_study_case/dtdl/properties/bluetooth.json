@@ -1,0 +1,7 @@
+{
+  "bluetooth": {
+    "protocol": "BLE v4.2",
+    "range": { "value": "60", "unity": "m" },
+    "velocity": { "value": "1", "unity": "Mbps" }
+  }
+}

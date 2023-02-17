@@ -1,0 +1,8 @@
+{
+  "rom": {
+    "model": "",
+    "type": "SSD",
+    "capacity": { "value": "448", "unity": "KB" },
+    "velocity": { "value": "", "unity": "" }
+  }
+}

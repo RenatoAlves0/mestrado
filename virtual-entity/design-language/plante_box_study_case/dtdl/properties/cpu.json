@@ -1,0 +1,13 @@
+{
+  "cpu": {
+    "model": "ESP 32S",
+    "cores": "1",
+    "lithography": { "value": "5", "unity": "mm" },
+    "clock": { "value": "240", "unity": "MHz" },
+    "temperature": {
+      "min": "-40",
+      "max": "150",
+      "unity": "degreeCelsius"
+    }
+  }
+}

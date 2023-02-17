@@ -1,0 +1,17 @@
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:com:example:yl83;1",
+  "@type": "Interface",
+  "contents": [
+    {
+      "@type": ["Telemetry"],
+      "name": "chuva",
+      "schema": "string",
+      "@id": "",
+      "comment": "",
+      "description": "",
+      "displayName": "",
+      "unit": "percent"
+    }
+  ]
+}

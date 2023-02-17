@@ -1,0 +1,7 @@
+{
+  "wifi": {
+    "protocol": "IEEE 802.11 b/g/n",
+    "range": { "value": "100/180", "unity": "m" },
+    "velocity": { "value": "150", "unity": "Mbps" }
+  }
+}
