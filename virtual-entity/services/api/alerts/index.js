@@ -1,5 +1,7 @@
 import fs from "fs";
 import process from "process";
+import agrold from "../../../design-language/plante_box_study_case/agrold/response_telemetry/ler.json" assert { type: "json" };
+import dtdl from "../../../design-language/plante_box_study_case/dtdl/response_telemetry/ler.json" assert { type: "json" };
 
 const ideal = {
   t: 20,
@@ -16,7 +18,10 @@ export const check = (props, type, cpu, mem, totalMsg, firstMsg) => {
   const ByteToMB = (x) => (x / 1024 ** 2).toFixed(2);
   const MicroSecondsToMiliSec = (x) => (x / 1000).toFixed(2);
 
-  if (type == "agro") {
+  if (
+    JSON.stringify(Object.keys(agrold)) ===
+    JSON.stringify(Object.keys(value.telemetry[0]))
+  ) {
     value.telemetry.forEach((el) => {
       el.l.t != ideal.t && alertas.push("Temperatura está fora da faixa ideal");
       el.l.u != ideal.u && alertas.push("Umidade está fora da faixa ideal");
@@ -27,7 +32,10 @@ export const check = (props, type, cpu, mem, totalMsg, firstMsg) => {
       el.l.l != ideal.l &&
         alertas.push("Nível de Luz está fora da faixa ideal");
     });
-  } else {
+  } else if (
+    JSON.stringify(Object.keys(dtdl)) ===
+    JSON.stringify(Object.keys(value.telemetry[0]))
+  ) {
     value.telemetry.forEach((el) => {
       el.ler.temperatura != ideal.t &&
         alertas.push("Temperatura está fora da faixa ideal");
